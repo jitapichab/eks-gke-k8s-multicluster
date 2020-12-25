@@ -4,6 +4,8 @@ locals {
        application = "eks-gke-k8s-multicluster"
        env = local.env
     }
+    aws_cluster = "eks_cluster_${var.env}"
+    gke_cluster = "gke_cluster_${var.env}"
 }
 
 provider "aws" {

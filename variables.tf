@@ -8,7 +8,7 @@ variable "aws_profile" {
     type = string
     description = "aws profile"
     default = "default"
-{
+}
 
 variable "aws_cidr" {
     type = string
@@ -33,3 +33,9 @@ variable "aws_public_subnets" {
     description = "list of public subnets AWS"
     default = ["100.33.12.0/26","100.33.12.64/26","100.33.12.128/26"]
 }
+
+variable "my_public_ip" {
+    description = "public ip to reach servers in private networks"
+}
+
+
