@@ -38,4 +38,8 @@ variable "my_public_ip" {
     description = "public ip to reach servers in private networks"
 }
 
-
+variable "aws_key_name" {
+    type = string
+    description = "aws key name"
+    default = "eks-gke-k8s-multicluster"
+}
