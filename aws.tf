@@ -1,3 +1,11 @@
+data "aws_eks_cluster" "cluster" {
+  name = module.aws_cluster.cluster_id
+}
+
+data "aws_eks_cluster_auth" "cluster" {
+  name = module.aws_cluster.cluster_id
+}
+
 module "aws_vpc" {
     source = "terraform-aws-modules/vpc/aws"
     version = "2.63.0"
@@ -35,17 +43,17 @@ module "aws_bastion" {
   project           = local.common_tags.application
 }
 
-module "aws_cluster" {
+module "aws_eks_cluster" {
   source          = "terraform-aws-modules/eks/aws"
   version = "12.2.0"
   cluster_name    = local.aws_cluster
-  cluster_version = "1.17"
+  cluster_version = var.cluster_version
   subnets         = module.aws_vpc.private_subnets
   vpc_id          = module.aws_vpc.vpc_id
 
   worker_groups = [
     {
-      instance_type = "m4.large"
+      instance_type = var.aws_instance_size
       asg_max_size  = 3
       asg_desired_capacity = 3
       asg_max_size = 3

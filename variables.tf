@@ -43,3 +43,15 @@ variable "aws_key_name" {
     description = "aws key name"
     default = "eks-gke-k8s-multicluster"
 }
+
+variable "cluster_version" {
+    type = string
+    description = "cluster version"
+    default = "1.17"
+}
+
+variable "aws_instance_size" {
+    type = string
+    description = "aws instance size worker nodes"
+    default = "t2.small"
+}
