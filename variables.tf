@@ -70,13 +70,13 @@ variable "gcp_region" {
 variable "gcp_network_name" {
     type = string
     description = "google cloud network name"
-    default = "gke_network"
+    default = "gke-network"
 }
 
 variable "gcp_subnetwork_name" {
     type = string
     description = "google cloud subnetwork name"
-    default = "gke_subnetwork"
+    default = "gke-subnetwork"
 }
 
 variable "gcp_subnetwork_range" {
@@ -100,17 +100,17 @@ variable "gcp_subnetwork_services" {
 variable "gcp_workers_name" {
     type = string
     description = "google cloud workers name"
-    default = "gke_workers"
+    default = "gke-workers"
 }
 
 variable "gcp_instance_size" {
     type = string
     description = "google cloud gke workers instance size"
-    default = "n1-standard-4"
+    default = "n1-standard-2"
 }
 
 variable "gcp_kubernetes_version" {
     type = string
     description = "gke kubernetes version"
-    default = "1.17.17-gke.6700"
+    default = "1.17.17-gke.3700"
 }

@@ -5,7 +5,7 @@ locals {
        env = local.env
     }
     aws_cluster = "eks_cluster_${local.env}"
-    gke_cluster = "gke_cluster_${local.env}"
+    gke_cluster = "gke-cluster-${local.env}"
 }
 
 provider "aws" {

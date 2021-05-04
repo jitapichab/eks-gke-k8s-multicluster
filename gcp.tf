@@ -26,7 +26,7 @@ module "node_pool" {
     name               = var.gcp_workers_name
     region             = module.gke_cluster.region
     gke_cluster_name   = module.gke_cluster.name
-    machine_type       = var.gke_instance_size
+    machine_type       = var.gcp_instance_size
     min_node_count     = "3"
     max_node_count     = "3"
     kubernetes_version = module.gke_cluster.kubernetes_version
