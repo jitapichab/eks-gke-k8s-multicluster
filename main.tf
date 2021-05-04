@@ -14,6 +14,13 @@ provider "aws" {
     profile = var.aws_profile
 } 
 
+provider "google" {
+  version = "~> 2.5.0"
+  credentials = file("./.json")
+  project     = var.gcp_project
+  region      = var.gcp_region
+}
+
 provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)

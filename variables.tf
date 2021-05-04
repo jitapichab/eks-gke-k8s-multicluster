@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "aws_profile" {
     type = string
     description = "aws profile"
-    default = "default"
+    default = "test"
 }
 
 variable "aws_cidr" {
@@ -53,5 +53,64 @@ variable "cluster_version" {
 variable "aws_instance_size" {
     type = string
     description = "aws instance size worker nodes"
-    default = "t2.small"
+    default = "m4.large"
+}
+
+variable "gcp_project" {
+    type = string
+    description = "gcp project name"
+}
+
+variable "gcp_region" {
+    type = string
+    description = "google cloud region"
+    default = "us-central1"
+}
+
+variable "gcp_network_name" {
+    type = string
+    description = "google cloud network name"
+    default = "gke_network"
+}
+
+variable "gcp_subnetwork_name" {
+    type = string
+    description = "google cloud subnetwork name"
+    default = "gke_subnetwork"
+}
+
+variable "gcp_subnetwork_range" {
+    type = string
+    description = "google cloud subnetwork range"
+    default = "10.31.0.0/16"
+}
+
+variable "gcp_subnetwork_pods" {
+    type = string
+    description = "google cloud subnetwork pods"
+    default = "10.32.0.0/16"
+}
+
+variable "gcp_subnetwork_services" {
+    type = string
+    description = "google cloud subnetwork services"
+    default = "10.33.0.0/16"
+}
+
+variable "gcp_workers_name" {
+    type = string
+    description = "google cloud workers name"
+    default = "gke_workers"
+}
+
+variable "gcp_instance_size" {
+    type = string
+    description = "google cloud gke workers instance size"
+    default = "n1-standard-4"
+}
+
+variable "gcp_kubernetes_version" {
+    type = string
+    description = "gke kubernetes version"
+    default = "1.17.17-gke.6700"
 }
