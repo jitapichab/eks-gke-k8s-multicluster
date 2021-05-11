@@ -32,17 +32,6 @@ module "aws_vpc" {
     tags = local.common_tags
 }
 
-module "aws_bastion" {
-  source            = "github.com/jetbrains-infra/terraform-aws-bastion-host"  
-  subnet_id         = element(module.aws_vpc.public_subnets,1)
-  ssh_key           = var.aws_key_name
-  allowed_hosts     = [var.my_public_ip]
-  internal_networks = [var.aws_cidr]
-  disk_size         = 10
-  instance_type     = "t2.micro"
-  project           = local.common_tags.application
-}
-
 module "aws_eks_cluster" {
   source          = "terraform-aws-modules/eks/aws"
   version = "12.2.0"
