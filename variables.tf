@@ -7,7 +7,6 @@ variable "aws_region" {
 variable "aws_profile" {
     type = string
     description = "aws profile"
-    default = "test"
 }
 
 variable "aws_cidr" {
